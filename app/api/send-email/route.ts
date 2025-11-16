@@ -29,28 +29,84 @@ ${message ? `留言：${message}` : ''}
     // 使用 Resend API 发送邮件（推荐）
     // 如果没有配置 Resend，可以使用其他邮件服务
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@yiqizhuang.com'
+    // 使用 onboarding@resend.dev 时，只能发送到注册邮箱
+    // 要发送到其他邮箱，需要验证域名
+    const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
+    // Resend 测试模式限制：只能发送到注册账户邮箱
+    const RESEND_TEST_EMAIL = process.env.RESEND_TEST_EMAIL || 'maverik.he@gmail.com'
 
     if (RESEND_API_KEY) {
       // 使用 Resend 发送邮件
       console.log('Attempting to send email via Resend...', {
         from: RESEND_FROM_EMAIL,
-        to,
+        actualRecipient: to,
+        sendTo: isTestMode ? RESEND_TEST_EMAIL : to,
+        isTestMode,
         hasApiKey: !!RESEND_API_KEY,
       })
 
-      const resendResponse = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: RESEND_FROM_EMAIL,
-          to: [to],
-          subject: subject || `【一起装】免费试用申请 - ${name}`,
-          text: emailContent,
-          html: `
+      // Resend 测试模式：如果使用 onboarding@resend.dev，只能发送到注册邮箱
+      // 解决方案：发送到注册邮箱，并在邮件中包含实际收件人信息
+      const isTestMode = RESEND_FROM_EMAIL === 'onboarding@resend.dev'
+      const actualRecipient = to
+      const sendTo = isTestMode ? RESEND_TEST_EMAIL : to
+      
+      // 如果是测试模式，在邮件内容中添加实际收件人信息
+      const finalEmailContent = isTestMode 
+        ? `${emailContent}\n\n---\n实际收件人：${actualRecipient}\n请转发到此邮箱。`
+        : emailContent
+      
+      const finalHtmlContent = isTestMode
+        ? `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
+                <strong>⚠️ 测试模式：</strong>实际收件人：${actualRecipient}<br>
+                请将此邮件转发到实际收件人邮箱。
+              </div>
+              <h2 style="color: #0066FF;">新的免费试用申请</h2>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>姓名：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${name}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>手机号：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${phone}</td>
+                </tr>
+                ${company ? `
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>公司名称：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${company}</td>
+                </tr>
+                ` : ''}
+                ${email ? `
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>邮箱：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td>
+                </tr>
+                ` : ''}
+                ${source ? `
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>来源：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${source}</td>
+                </tr>
+                ` : ''}
+                ${timestamp ? `
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>提交时间：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${new Date(timestamp).toLocaleString('zh-CN')}</td>
+                </tr>
+                ` : ''}
+                ${message ? `
+                <tr>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>留言：</strong></td>
+                  <td style="padding: 8px; border-bottom: 1px solid #eee;">${message}</td>
+                </tr>
+                ` : ''}
+              </table>
+            </div>
+          `
+        : `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <h2 style="color: #0066FF;">新的免费试用申请</h2>
               <table style="width: 100%; border-collapse: collapse;">
@@ -94,7 +150,20 @@ ${message ? `留言：${message}` : ''}
                 ` : ''}
               </table>
             </div>
-          `,
+          `
+
+      const resendResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: RESEND_FROM_EMAIL,
+          to: [sendTo],
+          subject: subject || `【一起装】免费试用申请 - ${name}`,
+          text: finalEmailContent,
+          html: finalHtmlContent,
         }),
       })
 
