@@ -30,11 +30,41 @@ const comparison = [
     ai: "远程验收，随时查看",
     benefit: "客户满意度+25%",
   },
+  {
+    aspect: "进度跟踪",
+    traditional: "人工记录，容易遗漏",
+    ai: "自动记录，实时更新",
+    benefit: "信息准确率+50%",
+  },
+  {
+    aspect: "问题处理",
+    traditional: "被动发现，滞后处理",
+    ai: "主动预警，及时处理",
+    benefit: "问题响应速度+60%",
+  },
+]
+
+const scheduleBenefits = [
+  {
+    title: "智能排期",
+    description: "根据历史数据和当前进度，AI自动生成最优施工计划",
+    icon: "📅",
+  },
+  {
+    title: "进度可视化",
+    description: "甘特图、时间轴等多种视图，清晰展示项目进度",
+    icon: "📊",
+  },
+  {
+    title: "风险预警",
+    description: "自动识别延期风险，提前预警并给出解决方案",
+    icon: "⚠️",
+  },
 ]
 
 export function ScheduleManagementSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="section-schedule" className="py-20 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +76,8 @@ export function ScheduleManagementSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             工期管理
           </h2>
-          <p className="text-gray-600 text-lg">
-            验收从工期堵点变为营销亮点
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            验收从工期堵点变为营销亮点，让客户实时了解进度，提升信任度和满意度
           </p>
         </motion.div>
 
@@ -121,6 +151,36 @@ export function ScheduleManagementSection() {
             </CardContent>
           </Card>
         </div>
+
+        {/* Schedule Benefits */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">智能工期管理优势</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {scheduleBenefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6 text-center">
+                    <div className="text-5xl mb-4">{benefit.icon}</div>
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{benefit.title}</h4>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

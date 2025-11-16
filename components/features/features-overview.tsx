@@ -2,8 +2,38 @@
 
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { motion } from "framer-motion"
+import { useEffect } from "react"
 
 export function FeaturesOverview() {
+  const handleTabChange = (value: string) => {
+    // 滚动到对应的section
+    const sectionId = `section-${value}`
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // 导航栏高度
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  // 处理URL参数，如果有tab参数则滚动到对应位置
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const tab = params.get('tab')
+      if (tab) {
+        setTimeout(() => {
+          handleTabChange(tab)
+        }, 100)
+      }
+    }
+  }, [])
+
   return (
     <section className="py-20 bg-gradient-to-b from-brand-blue to-brand-blue-dark text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,12 +46,12 @@ export function FeaturesOverview() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
             产品功能
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+          <p className="text-xl text-white/95 max-w-2xl mx-auto drop-shadow-md">
             详细展示AI系统功能，让访客理解技术如何落地
           </p>
         </motion.div>
 
-        <Tabs defaultValue="site" className="w-full">
+        <Tabs defaultValue="site" className="w-full" onValueChange={handleTabChange}>
           <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg p-1.5 gap-1">
             <TabsTrigger 
               value="site" 

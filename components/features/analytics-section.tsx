@@ -32,9 +32,50 @@ const metrics = [
   { icon: TrendingUp, label: "工期达成率", value: "88%", color: "text-orange-500" },
 ]
 
+const dataDimensions = [
+  {
+    title: "人员分析",
+    metrics: ["出勤率", "工作时长", "技能匹配度", "工作效率"],
+    icon: "👥",
+  },
+  {
+    title: "进度分析",
+    metrics: ["工期达成率", "节点完成度", "延期风险", "资源利用率"],
+    icon: "📈",
+  },
+  {
+    title: "质量分析",
+    metrics: ["整改率", "验收通过率", "客户满意度", "问题分布"],
+    icon: "⭐",
+  },
+  {
+    title: "成本分析",
+    metrics: ["材料成本", "人工成本", "设备成本", "成本趋势"],
+    icon: "💰",
+  },
+]
+
+const analyticsFeatures = [
+  {
+    title: "实时大屏",
+    description: "数据大屏实时展示，管理层一目了然",
+    benefit: "决策效率提升50%",
+  },
+  {
+    title: "智能报表",
+    description: "自动生成各类报表，支持自定义维度",
+    benefit: "报表制作时间减少80%",
+  },
+  {
+    title: "预测分析",
+    description: "基于历史数据预测未来趋势，提前预警",
+    benefit: "风险识别提前30天",
+  },
+]
+
 export function AnalyticsSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="section-analytics" className="py-20 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +87,8 @@ export function AnalyticsSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             数据分析
           </h2>
-          <p className="text-gray-600 text-lg">
-            让管理从凭经验、靠感觉走向看数据、做决策
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            让管理从凭经验、靠感觉走向看数据、做决策，通过数据驱动提升管理效率和决策质量
           </p>
         </motion.div>
 
@@ -109,6 +150,75 @@ export function AnalyticsSection() {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Data Dimensions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">多维度数据分析</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dataDimensions.map((dimension, index) => (
+              <motion.div
+                key={dimension.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-4">{dimension.icon}</div>
+                    <h4 className="text-lg font-semibold mb-3 text-gray-900">{dimension.title}</h4>
+                    <ul className="space-y-2">
+                      {dimension.metrics.map((metric, i) => (
+                        <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                          <span className="text-brand-blue">•</span>
+                          {metric}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Analytics Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">核心功能</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {analyticsFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow border-l-4 border-l-brand-blue">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h4>
+                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <div className="inline-block px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-semibold">
+                      {feature.benefit}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

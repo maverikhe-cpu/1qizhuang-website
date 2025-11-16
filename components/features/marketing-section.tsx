@@ -32,9 +32,45 @@ const funnelSteps = [
   },
 ]
 
+const marketingTools = [
+  {
+    title: "小程序分享",
+    description: "一键生成小程序链接，客户可实时查看工地进度",
+    benefit: "获客成本降低60%",
+  },
+  {
+    title: "进度海报",
+    description: "自动生成精美的进度海报，适合朋友圈分享",
+    benefit: "分享率提升80%",
+  },
+  {
+    title: "VR全景",
+    description: "720度全景展示，让客户身临其境感受装修效果",
+    benefit: "转化率提升35%",
+  },
+]
+
+const caseStudies = [
+  {
+    company: "某大型装修公司",
+    result: "通过小程序分享，月均获客量提升150%",
+    metric: "150%",
+  },
+  {
+    company: "某区域连锁品牌",
+    result: "客户满意度提升至98%，转介绍率提升40%",
+    metric: "98%",
+  },
+  {
+    company: "某高端定制公司",
+    result: "通过VR全景展示，签单率提升25%",
+    metric: "25%",
+  },
+]
+
 export function MarketingSection() {
   return (
-    <section className="py-20 bg-white">
+    <section id="section-marketing" className="py-20 bg-white scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +82,8 @@ export function MarketingSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             营销获客
           </h2>
-          <p className="text-gray-600 text-lg">
-            让好交付自动带来新客户
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            让好交付自动带来新客户，通过透明化展示工地进度，提升客户信任度，降低获客成本
           </p>
         </motion.div>
 
@@ -113,6 +149,68 @@ export function MarketingSection() {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Marketing Tools */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">营销工具矩阵</h3>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {marketingTools.map((tool, index) => (
+              <motion.div
+                key={tool.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow border-t-4 border-t-brand-orange">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{tool.title}</h4>
+                    <p className="text-gray-600 mb-4">{tool.description}</p>
+                    <div className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold">
+                      {tool.benefit}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Case Studies */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-brand-orange/10 to-brand-blue/10 rounded-2xl p-8 md:p-12"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">客户成功案例</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={study.company}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full bg-white">
+                  <CardContent className="p-6">
+                    <div className="text-3xl font-bold text-brand-blue mb-2">{study.metric}</div>
+                    <h4 className="font-semibold text-gray-900 mb-2">{study.company}</h4>
+                    <p className="text-sm text-gray-600">{study.result}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
