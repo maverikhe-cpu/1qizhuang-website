@@ -81,7 +81,7 @@ export function StatsSection() {
               className="text-center"
             >
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-              <p className="text-gray-600 mt-2 text-sm md:text-base">
+              <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">
                 {stat.label}
               </p>
             </motion.div>

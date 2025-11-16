@@ -28,12 +28,12 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             告别装修管理的
             <br />
-            <span className="text-brand-orange">&apos;看不见、管不了、不管了&apos;</span>
+            <span className="text-brand-orange drop-shadow-md">&apos;看不见、管不了、不管了&apos;</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-md">
             用AI智能交付，撬动5万亿家装新市场
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

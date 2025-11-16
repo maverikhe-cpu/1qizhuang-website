@@ -14,10 +14,10 @@ export function ValuePropositionSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 drop-shadow-md">
             核心价值主张
           </h2>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-2xl md:text-4xl font-bold">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-2xl md:text-4xl font-bold drop-shadow-sm">
             <motion.div
               className="flex items-center gap-4"
               initial={{ opacity: 0, x: -20 }}
