@@ -37,7 +37,7 @@ const cases = [
 
 export function CaseShowcase() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-12">
           {cases.map((caseItem, index) => (
@@ -60,15 +60,15 @@ export function CaseShowcase() {
                   </div>
                   <div className="md:w-1/2 p-8">
                     <div className="flex items-center gap-2 mb-4">
-                      <h3 className="text-2xl font-bold">{caseItem.company}</h3>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-sm">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{caseItem.company}</h3>
+                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm text-gray-700 dark:text-gray-300">
                         {caseItem.scale}
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 rounded text-sm">
+                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm text-gray-700 dark:text-gray-300">
                         {caseItem.region}
                       </span>
                     </div>
-                    <p className="text-gray-600 mb-6 italic">&ldquo;{caseItem.testimonial}&rdquo;</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 italic">&ldquo;{caseItem.testimonial}&rdquo;</p>
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(caseItem.before).map(([key, value]) => {
                         const afterValue = caseItem.after[key as keyof typeof caseItem.after]
@@ -76,8 +76,8 @@ export function CaseShowcase() {
                           ? ((afterValue - value) / value * 100).toFixed(0)
                           : null
                         return (
-                          <div key={key} className="p-4 bg-gray-50 rounded-lg">
-                            <p className="text-sm text-gray-600 mb-2">
+                          <div key={key} className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                            <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
                               {key === 'sites' ? '管理工地' :
                                key === 'complaintRate' ? '客诉率' :
                                key === 'acquisitionCost' ? '获客成本' :
@@ -86,7 +86,7 @@ export function CaseShowcase() {
                                key === 'sitesPerManager' ? '人均管理工地' : key}
                             </p>
                             <div className="flex items-center gap-2">
-                              <span className="text-2xl font-bold text-gray-400 line-through">
+                              <span className="text-2xl font-bold text-gray-400 dark:text-gray-500 line-through">
                                 {typeof value === 'number' ? value : value}
                               </span>
                               <TrendingDown className="h-4 w-4 text-red-500" />
@@ -94,7 +94,7 @@ export function CaseShowcase() {
                                 {typeof afterValue === 'number' ? afterValue : afterValue}
                               </span>
                               {improvement && (
-                                <span className="text-sm text-green-600 font-semibold">
+                                <span className="text-sm text-green-600 dark:text-green-400 font-semibold">
                                   {parseFloat(improvement) > 0 ? '+' : ''}{improvement}%
                                 </span>
                               )}

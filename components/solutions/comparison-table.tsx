@@ -48,7 +48,7 @@ export function ComparisonTable() {
   const [expandedRow, setExpandedRow] = useState<number | null>(null)
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export function ComparisonTable() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             传统 vs 智能对比
           </h2>
         </motion.div>
@@ -68,9 +68,9 @@ export function ComparisonTable() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b bg-gray-50">
-                      <th className="text-left p-4 font-semibold">对比维度</th>
-                      <th className="text-left p-4 font-semibold text-red-600">传统方式</th>
+                    <tr className="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                      <th className="text-left p-4 font-semibold text-gray-900 dark:text-white">对比维度</th>
+                      <th className="text-left p-4 font-semibold text-red-600 dark:text-red-400">传统方式</th>
                       <th className="text-left p-4 font-semibold text-brand-blue">一起装AI</th>
                       <th className="w-12"></th>
                     </tr>
@@ -80,19 +80,19 @@ export function ComparisonTable() {
                       <>
                         <tr
                           key={item.dimension}
-                          className="border-b hover:bg-gray-50 transition-colors cursor-pointer"
+                          className="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                           onClick={() =>
                             setExpandedRow(expandedRow === index ? null : index)
                           }
                         >
-                          <td className="p-4 font-medium">{item.dimension}</td>
-                          <td className="p-4 text-gray-600">{item.traditional}</td>
-                          <td className="p-4 text-gray-900 font-medium">{item.ai}</td>
+                          <td className="p-4 font-medium text-gray-900 dark:text-white">{item.dimension}</td>
+                          <td className="p-4 text-gray-600 dark:text-gray-300">{item.traditional}</td>
+                          <td className="p-4 text-gray-900 dark:text-white font-medium">{item.ai}</td>
                           <td className="p-4">
                             {expandedRow === index ? (
-                              <ChevronUp className="h-5 w-5 text-gray-400" />
+                              <ChevronUp className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                             ) : (
-                              <ChevronDown className="h-5 w-5 text-gray-400" />
+                              <ChevronDown className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                             )}
                           </td>
                         </tr>
@@ -104,8 +104,8 @@ export function ComparisonTable() {
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.3 }}
                             >
-                              <td colSpan={4} className="p-4 bg-gray-50">
-                                <p className="text-gray-700">{item.detail}</p>
+                              <td colSpan={4} className="p-4 bg-gray-50 dark:bg-gray-800">
+                                <p className="text-gray-700 dark:text-gray-300">{item.detail}</p>
                               </td>
                             </motion.tr>
                           )}

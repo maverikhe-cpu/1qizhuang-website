@@ -36,7 +36,7 @@ const segments = [
 
 export function CustomerSegmentation() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export function CustomerSegmentation() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             客户分层
           </h2>
         </motion.div>
@@ -64,22 +64,22 @@ export function CustomerSegmentation() {
                 <Card className={`h-full border-2 ${segment.color} hover:shadow-lg transition-shadow`}>
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-3 bg-gray-100 rounded-lg">
-                        <Icon className="h-6 w-6 text-gray-700" />
+                      <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                        <Icon className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl">{segment.type}</CardTitle>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <CardTitle className="text-xl text-gray-900 dark:text-white">{segment.type}</CardTitle>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
                           年营业额 {segment.revenue}
                         </p>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <h3 className="font-semibold text-lg mb-2 text-gray-900">
+                    <h3 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
                       {segment.title}
                     </h3>
-                    <p className="text-gray-600 mb-4">{segment.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{segment.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {segment.features.map((feature) => (
                         <span

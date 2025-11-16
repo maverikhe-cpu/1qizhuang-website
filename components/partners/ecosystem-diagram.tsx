@@ -14,7 +14,7 @@ const layers = [
 
 export function EcosystemDiagram() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,11 +25,11 @@ export function EcosystemDiagram() {
         >
           <div className="inline-flex items-center gap-2 mb-4">
             <Layers className="h-8 w-8 text-brand-blue" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
               生态整合图
             </h2>
           </div>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             &ldquo;一起装&rdquo;如何连接各层生态
           </p>
         </motion.div>
@@ -47,7 +47,7 @@ export function EcosystemDiagram() {
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-32 font-semibold text-gray-900">
+                      <div className="w-32 font-semibold text-gray-900 dark:text-white">
                         {layer.name}
                       </div>
                       <div className="flex-1 flex flex-wrap gap-2">

@@ -36,7 +36,7 @@ export function ROICalculator() {
   const roi = calculateROI()
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,11 +47,11 @@ export function ROICalculator() {
         >
           <div className="inline-flex items-center gap-2 mb-4">
             <Calculator className="h-8 w-8 text-brand-blue" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
               ROI计算器
             </h2>
           </div>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
             输入您的数据，计算可节省的成本和提升的效率
           </p>
         </motion.div>
@@ -64,7 +64,7 @@ export function ROICalculator() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-gray-900 dark:text-white">
                     年均工地数量
                   </label>
                   <Input
@@ -75,7 +75,7 @@ export function ROICalculator() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-gray-900 dark:text-white">
                     平均工期（天）
                   </label>
                   <Input
@@ -86,7 +86,7 @@ export function ROICalculator() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-gray-900 dark:text-white">
                     管理人数
                   </label>
                   <Input
@@ -106,27 +106,27 @@ export function ROICalculator() {
               <CardContent>
                 {roi ? (
                   <div className="space-y-6">
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <p className="text-sm text-gray-600 mb-1">节省时间</p>
-                      <p className="text-3xl font-bold text-green-600">
+                    <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">节省时间</p>
+                      <p className="text-3xl font-bold text-green-600 dark:text-green-400">
                         {roi.timeSaved} 小时/年
                       </p>
                     </div>
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <p className="text-sm text-gray-600 mb-1">节省成本</p>
+                    <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">节省成本</p>
                       <p className="text-3xl font-bold text-brand-blue">
                         ¥{roi.costSaved.toLocaleString()}/年
                       </p>
                     </div>
-                    <div className="p-4 bg-orange-50 rounded-lg">
-                      <p className="text-sm text-gray-600 mb-1">效率提升</p>
+                    <div className="p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">效率提升</p>
                       <p className="text-3xl font-bold text-brand-orange">
                         {roi.efficiencyGain} 倍
                       </p>
                     </div>
                   </div>
                 ) : (
-                  <div className="text-center py-12 text-gray-400">
+                  <div className="text-center py-12 text-gray-400 dark:text-gray-500">
                     请输入数据查看计算结果
                   </div>
                 )}

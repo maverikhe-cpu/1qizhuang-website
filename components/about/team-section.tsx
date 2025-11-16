@@ -27,7 +27,7 @@ const teams = [
 
 export function TeamSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export function TeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             核心团队
           </h2>
         </motion.div>
@@ -57,10 +57,10 @@ export function TeamSection() {
                     <div className="inline-flex p-4 bg-brand-blue/10 rounded-full mb-4">
                       <Icon className="h-8 w-8 text-brand-blue" />
                     </div>
-                    <CardTitle className="text-xl">{team.title}</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 dark:text-white">{team.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{team.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{team.description}</p>
                     <p className="text-2xl font-bold text-brand-blue">{team.members}人</p>
                   </CardContent>
                 </Card>

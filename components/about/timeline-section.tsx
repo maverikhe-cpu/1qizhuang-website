@@ -13,7 +13,7 @@ const milestones = [
 
 export function TimelineSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ export function TimelineSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             发展历程
           </h2>
         </motion.div>
@@ -48,11 +48,11 @@ export function TimelineSection() {
                         <div className="text-2xl font-bold text-brand-blue mb-2">
                           {milestone.year}
                         </div>
-                        <div className="text-gray-700">{milestone.event}</div>
+                        <div className="text-gray-700 dark:text-gray-300">{milestone.event}</div>
                       </CardContent>
                     </Card>
                   </div>
-                  <div className="w-4 h-4 bg-brand-blue rounded-full border-4 border-white shadow-lg z-10 flex-shrink-0" />
+                  <div className="w-4 h-4 bg-brand-blue rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10 flex-shrink-0" />
                   <div className="flex-1 hidden md:block" />
                 </motion.div>
               ))}

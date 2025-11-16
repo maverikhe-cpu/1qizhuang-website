@@ -33,7 +33,7 @@ const partners = [
 
 export function TechFoundation() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export function TechFoundation() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             技术基石
           </h2>
         </motion.div>
@@ -63,11 +63,11 @@ export function TechFoundation() {
                     <div className="inline-flex p-4 bg-brand-blue/10 rounded-full mb-4">
                       <Icon className="h-8 w-8 text-brand-blue" />
                     </div>
-                    <CardTitle className="text-xl">{partner.name}</CardTitle>
-                    <p className="text-sm text-gray-600 mt-1">{partner.role}</p>
+                    <CardTitle className="text-xl text-gray-900 dark:text-white">{partner.name}</CardTitle>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{partner.role}</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-sm">{partner.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">{partner.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

@@ -24,7 +24,7 @@ const values = [
 
 export function CultureSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export function CultureSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             企业文化
           </h2>
         </motion.div>
@@ -54,10 +54,10 @@ export function CultureSection() {
                     <div className="inline-flex p-4 bg-brand-orange/10 rounded-full mb-4">
                       <Icon className="h-8 w-8 text-brand-orange" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                       {value.keyword}
                     </h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

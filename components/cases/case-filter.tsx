@@ -15,11 +15,11 @@ export function CaseFilter() {
   const [selectedPainPoint, setSelectedPainPoint] = useState("全部")
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap gap-4 justify-center">
           <div className="flex flex-wrap gap-2">
-            <span className="text-sm font-medium text-gray-700 self-center">企业规模：</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 self-center">企业规模：</span>
             {filters.scale.map((item) => (
               <Button
                 key={item}
@@ -32,7 +32,7 @@ export function CaseFilter() {
             ))}
           </div>
           <div className="flex flex-wrap gap-2">
-            <span className="text-sm font-medium text-gray-700 self-center">地区：</span>
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300 self-center">地区：</span>
             {filters.region.map((item) => (
               <Button
                 key={item}

@@ -30,7 +30,7 @@ const steps = [
 
 export function ImplementationPath() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export function ImplementationPath() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             实施路径
           </h2>
         </motion.div>
@@ -58,7 +58,7 @@ export function ImplementationPath() {
                   className="relative"
                 >
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gray-300 z-0" />
+                    <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gray-300 dark:bg-gray-700 z-0" />
                   )}
                   <Card className="relative z-10 text-center">
                     <CardContent className="p-6">
@@ -68,8 +68,8 @@ export function ImplementationPath() {
                       <div className={`inline-block px-3 py-1 ${step.color} text-white rounded-full text-sm mb-2`}>
                         {step.duration}
                       </div>
-                      <h3 className="font-semibold text-xl mb-2">{step.title}</h3>
-                      <p className="text-gray-600 text-sm">{step.description}</p>
+                      <h3 className="font-semibold text-xl mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm">{step.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
