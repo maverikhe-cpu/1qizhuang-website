@@ -35,8 +35,8 @@ export function TrustSection() {
                 className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
               >
-                <div className="w-32 h-16 flex items-center justify-center bg-white rounded-lg px-4 shadow-sm">
-                  <span className="text-gray-400 text-sm font-medium">
+                <div className="w-32 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg px-4 shadow-sm">
+                  <span className="text-gray-400 dark:text-gray-500 text-sm font-medium">
                     {partner.name}
                   </span>
                 </div>

@@ -47,12 +47,12 @@ export function CTASection() {
 
   if (submitted) {
     return (
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gray-900 dark:bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             感谢您的提交！
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 dark:text-gray-300 text-lg">
             我们的团队会在24小时内与您联系
           </p>
         </div>
@@ -61,19 +61,19 @@ export function CTASection() {
   }
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
+    <section className="py-20 bg-gray-900 dark:bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               现在就开始智能化转型
             </h2>
-            <p className="text-gray-300 text-lg">
+            <p className="text-gray-300 dark:text-gray-300 text-lg">
               填写表单，立即预约演示
             </p>
           </div>
 
-          <Card className="bg-gray-800 border-gray-700">
+          <Card className="bg-gray-800 dark:bg-gray-800 border-gray-700 dark:border-gray-700">
             <CardHeader>
               <CardTitle className="text-white">免费试用申请</CardTitle>
             </CardHeader>
