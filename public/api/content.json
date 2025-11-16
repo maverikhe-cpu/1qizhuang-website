@@ -1,0 +1,276 @@
+{
+  "hero": {
+    "title": "告别装修管理的'看不见、管不了、不管了'",
+    "subtitle": "用AI智能交付，撬动5万亿家装新市场",
+    "stats": [
+      {"label": "服务装企", "value": "500", "suffix": "+家"},
+      {"label": "管理工地", "value": "10", "suffix": "万+个"},
+      {"label": "客户满意度", "value": "98", "suffix": "%"},
+      {"label": "平均提效", "value": "40", "suffix": "%"}
+    ]
+  },
+  "painPoints": [
+    {
+      "icon": "location",
+      "title": "工地分散管不过来",
+      "description": "多个工地同时施工，无法实时掌握每个工地的进度和情况"
+    },
+    {
+      "icon": "users",
+      "title": "人员杂乱无法追溯",
+      "description": "工人进出频繁，无法准确记录和管理人员信息"
+    },
+    {
+      "icon": "clock",
+      "title": "工期拖延尾款难收",
+      "description": "工期延误导致客户不满，尾款回收困难，影响现金流"
+    }
+  ],
+  "features": [
+    {
+      "id": "site-management",
+      "category": "工地管理",
+      "title": "远程查看",
+      "description": "24小时在线监工",
+      "icon": "camera",
+      "highlights": [
+        "实时视频监控，随时随地查看工地",
+        "多路视频同时查看，支持分屏显示",
+        "历史回放功能，追溯任意时刻"
+      ],
+      "image": "/images/features/site-management.jpg"
+    },
+    {
+      "id": "ai-recognition",
+      "category": "工地管理",
+      "title": "AI识人",
+      "description": "让每一个进入工地的人都有迹可循",
+      "icon": "user-check",
+      "highlights": [
+        "人脸识别自动考勤，无需手动打卡",
+        "陌生人预警，保障工地安全",
+        "人员轨迹记录，完整追溯"
+      ],
+      "image": "/images/features/ai-recognition.jpg"
+    },
+    {
+      "id": "safety-alert",
+      "category": "工地管理",
+      "title": "整洁与安全预警",
+      "description": "从'人盯'到'智管'",
+      "icon": "shield",
+      "highlights": [
+        "AI识别安全隐患，及时预警",
+        "工地整洁度评分，提升形象",
+        "自动生成整改报告"
+      ],
+      "image": "/images/features/safety-alert.jpg"
+    },
+    {
+      "id": "schedule-management",
+      "category": "工期管理",
+      "title": "智能统筹派工",
+      "description": "优化资源配置，提升效率",
+      "icon": "calendar",
+      "highlights": [
+        "智能匹配工人技能与任务",
+        "自动优化施工顺序",
+        "实时跟踪进度，及时调整"
+      ],
+      "image": "/images/features/schedule-management.jpg"
+    },
+    {
+      "id": "online-acceptance",
+      "category": "工期管理",
+      "title": "线上验收",
+      "description": "验收从工期堵点变为营销亮点",
+      "icon": "check-circle",
+      "highlights": [
+        "客户远程验收，节省时间",
+        "验收过程自动记录",
+        "提升客户满意度"
+      ],
+      "image": "/images/features/online-acceptance.jpg"
+    },
+    {
+      "id": "marketing-acquisition",
+      "category": "营销获客",
+      "title": "围观装修小程序",
+      "description": "意向客户可实时看工地",
+      "icon": "smartphone",
+      "highlights": [
+        "客户扫码即可查看工地进度",
+        "自动生成营销素材",
+        "提升客户信任度"
+      ],
+      "image": "/images/features/marketing-acquisition.jpg"
+    },
+    {
+      "id": "data-analytics",
+      "category": "数据分析",
+      "title": "数据大屏",
+      "description": "让管理从凭经验走向看数据",
+      "icon": "bar-chart",
+      "highlights": [
+        "人员热力图分析",
+        "问题整改率统计",
+        "工期达成率追踪"
+      ],
+      "image": "/images/features/data-analytics.jpg"
+    }
+  ],
+  "solutions": [
+    {
+      "type": "成长型装企",
+      "revenue": "<5000万",
+      "title": "低成本启动，快速见效",
+      "features": ["远程监控", "AI考勤"],
+      "description": "适合年营业额5000万以下的成长型装企，快速部署，立即见效"
+    },
+    {
+      "type": "规模型装企",
+      "revenue": "5000万-5亿",
+      "title": "标准化管理，口碑裂变",
+      "features": ["智能派工", "营销获客"],
+      "description": "适合年营业额5000万-5亿的规模型装企，标准化管理，提升口碑"
+    },
+    {
+      "type": "品牌型装企",
+      "revenue": ">5亿",
+      "title": "生态整合，品牌升级",
+      "features": ["支付宝合作", "数据API对接"],
+      "description": "适合年营业额5亿以上的品牌型装企，生态整合，品牌升级"
+    }
+  ],
+  "cases": [
+    {
+      "id": 1,
+      "company": "某头部装企",
+      "scale": "品牌型",
+      "region": "华东",
+      "before": {
+        "sites": 50,
+        "complaintRate": 15,
+        "efficiency": 60
+      },
+      "after": {
+        "sites": 500,
+        "complaintRate": 4.5,
+        "efficiency": 95
+      },
+      "testimonial": "我们交付的不是冰冷的监控硬件，而是一位助您省心管理工地、轻松触达客户、提高转化率的智能助手",
+      "image": "/images/cases/case1.jpg"
+    },
+    {
+      "id": 2,
+      "company": "某区域性公司",
+      "scale": "规模型",
+      "region": "华南",
+      "before": {
+        "acquisitionCost": 1000,
+        "conversionRate": 20
+      },
+      "after": {
+        "acquisitionCost": 400,
+        "conversionRate": 35
+      },
+      "testimonial": "通过围观小程序，我们的获客成本降低了60%，客户转化率提升了75%",
+      "image": "/images/cases/case2.jpg"
+    },
+    {
+      "id": 3,
+      "company": "某成长型企业",
+      "scale": "成长型",
+      "region": "华北",
+      "before": {
+        "managerEfficiency": 1,
+        "sitesPerManager": 5
+      },
+      "after": {
+        "managerEfficiency": 3,
+        "sitesPerManager": 15
+      },
+      "testimonial": "项目经理人效提升了3倍，现在一个项目经理可以管理15个工地",
+      "image": "/images/cases/case3.jpg"
+    }
+  ],
+  "partners": [
+    {
+      "name": "海康威视",
+      "logo": "/images/partners/hikvision.png",
+      "role": "硬件供应商",
+      "description": "提供高质量监控硬件设备"
+    },
+    {
+      "name": "萤石",
+      "logo": "/images/partners/ezviz.png",
+      "role": "云平台",
+      "description": "提供稳定的云存储和视频服务"
+    },
+    {
+      "name": "中国电信",
+      "logo": "/images/partners/chinatelecom.png",
+      "role": "网络服务",
+      "description": "提供稳定的网络连接服务"
+    },
+    {
+      "name": "支付宝",
+      "logo": "/images/partners/alipay.png",
+      "role": "信任生态",
+      "description": "支付宝'可信装修'核心合作伙伴"
+    },
+    {
+      "name": "阿里云",
+      "logo": "/images/partners/aliyun.png",
+      "role": "云计算",
+      "description": "提供云计算基础设施"
+    },
+    {
+      "name": "百度",
+      "logo": "/images/partners/baidu.png",
+      "role": "AI技术",
+      "description": "提供AI算法支持"
+    }
+  ],
+  "pricing": [
+    {
+      "name": "基础版",
+      "price": 999,
+      "period": "月",
+      "features": [
+        "远程监控",
+        "AI考勤",
+        "基础数据分析",
+        "技术支持"
+      ],
+      "suitable": "成长型装企"
+    },
+    {
+      "name": "专业版",
+      "price": 2999,
+      "period": "月",
+      "features": [
+        "所有基础版功能",
+        "智能派工",
+        "营销获客",
+        "高级数据分析",
+        "专属客服"
+      ],
+      "suitable": "规模型装企"
+    },
+    {
+      "name": "企业版",
+      "price": "定制",
+      "period": "",
+      "features": [
+        "所有专业版功能",
+        "支付宝合作",
+        "数据API对接",
+        "定制开发",
+        "专属团队"
+      ],
+      "suitable": "品牌型装企"
+    }
+  ]
+}
+
