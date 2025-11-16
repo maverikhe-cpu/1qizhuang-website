@@ -5,7 +5,7 @@ import { Eye, Brain, Database } from "lucide-react"
 
 export function ValuePropositionSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white">
+    <section className="py-20 bg-gradient-to-br from-brand-blue to-brand-blue-dark dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

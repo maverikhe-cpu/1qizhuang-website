@@ -28,7 +28,7 @@ export function AlipaySection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="border-2 border-brand-blue bg-gray-900 dark:bg-gray-900">
+          <Card className="border-2 border-brand-blue bg-gray-900">
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-4 text-white">
                 支付宝提供
@@ -49,7 +49,7 @@ export function AlipaySection() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 border-brand-orange bg-gray-900 dark:bg-gray-900">
+          <Card className="border-2 border-brand-orange bg-gray-900">
             <CardContent className="p-8">
               <h3 className="text-xl font-semibold mb-4 text-white">
                 一起装深度赋能
