@@ -36,20 +36,20 @@ ${message ? `留言：${message}` : ''}
     const RESEND_TEST_EMAIL = process.env.RESEND_TEST_EMAIL || 'maverik.he@gmail.com'
 
     if (RESEND_API_KEY) {
-      // 使用 Resend 发送邮件
-      console.log('Attempting to send email via Resend...', {
-        from: RESEND_FROM_EMAIL,
-        actualRecipient: to,
-        sendTo: isTestMode ? RESEND_TEST_EMAIL : to,
-        isTestMode,
-        hasApiKey: !!RESEND_API_KEY,
-      })
-
       // Resend 测试模式：如果使用 onboarding@resend.dev，只能发送到注册邮箱
       // 解决方案：发送到注册邮箱，并在邮件中包含实际收件人信息
       const isTestMode = RESEND_FROM_EMAIL === 'onboarding@resend.dev'
       const actualRecipient = to
       const sendTo = isTestMode ? RESEND_TEST_EMAIL : to
+      
+      // 使用 Resend 发送邮件
+      console.log('Attempting to send email via Resend...', {
+        from: RESEND_FROM_EMAIL,
+        actualRecipient: to,
+        sendTo: sendTo,
+        isTestMode,
+        hasApiKey: !!RESEND_API_KEY,
+      })
       
       // 如果是测试模式，在邮件内容中添加实际收件人信息
       const finalEmailContent = isTestMode 
