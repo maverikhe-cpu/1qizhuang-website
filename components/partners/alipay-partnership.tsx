@@ -15,14 +15,12 @@ export function AlipayPartnership() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-50 dark:bg-blue-900/20 rounded-full mb-6">
-            <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">支付宝</span>
-            <span className="px-3 py-1 bg-green-500 text-white rounded-full text-sm">
-              认证
-            </span>
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-medium">支付宝</span>
+            <span className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium">可信装修</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            支付宝合作专区
+            核心合作伙伴
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             我们是支付宝&apos;可信装修&apos;解决方案在AI端口的核心合作伙伴
@@ -31,9 +29,9 @@ export function AlipayPartnership() {
 
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="border-2 border-brand-blue">
+            <Card className="border-2 border-brand-blue bg-gray-900 dark:bg-gray-900">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-4 text-white">
                   支付宝提供
                 </h3>
                 <ul className="space-y-3">
@@ -45,16 +43,16 @@ export function AlipayPartnership() {
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-brand-blue flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                      <span className="text-gray-200">{item}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brand-orange">
+            <Card className="border-2 border-brand-orange bg-gray-900 dark:bg-gray-900">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold mb-4 text-white">
                   一起装深度赋能
                 </h3>
                 <ul className="space-y-3">
@@ -66,7 +64,7 @@ export function AlipayPartnership() {
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-brand-orange flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                      <span className="text-gray-200">{item}</span>
                     </li>
                   ))}
                 </ul>
