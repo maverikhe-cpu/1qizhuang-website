@@ -1,11 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Play } from "lucide-react"
 import { trackCTA } from "@/lib/utils"
 import { motion } from "framer-motion"
+import { LeadForm } from "@/components/common/lead-form"
 
 export function HeroSection() {
+  const [leadFormOpen, setLeadFormOpen] = useState(false)
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background Placeholder */}
@@ -37,7 +41,10 @@ export function HeroSection() {
               variant="brand-orange"
               size="lg"
               className="text-lg px-8 py-6 h-auto min-w-[200px]"
-              onClick={() => trackCTA("click", "hero-demo")}
+              onClick={() => {
+                trackCTA("click", "hero-demo")
+                setLeadFormOpen(true)
+              }}
               data-cta="primary"
             >
               立即预约演示
@@ -66,6 +73,7 @@ export function HeroSection() {
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2" />
         </motion.div>
       </div>
+      <LeadForm open={leadFormOpen} onOpenChange={setLeadFormOpen} />
     </section>
   )
 }

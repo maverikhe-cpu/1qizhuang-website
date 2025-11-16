@@ -7,13 +7,14 @@ import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { submitForm } from "@/lib/api"
+import { submitLeadForm } from "@/lib/api"
 import { trackCTA } from "@/lib/utils"
 
 const formSchema = z.object({
   name: z.string().min(2, "姓名至少2个字符"),
   phone: z.string().regex(/^1[3-9]\d{9}$/, "请输入正确的手机号"),
   company: z.string().optional(),
+  email: z.string().email("请输入正确的邮箱地址").optional(),
 })
 
 type FormData = z.infer<typeof formSchema>
@@ -30,7 +31,11 @@ export function CTASection() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const result = await submitForm(data)
+      const result = await submitLeadForm({
+        ...data,
+        source: "底部表单",
+        timestamp: new Date().toISOString(),
+      })
       if (result.success) {
         setSubmitted(true)
         trackCTA("submit", "bottom-form")
@@ -107,6 +112,19 @@ export function CTASection() {
                     placeholder="公司名称（选填）"
                     className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
                   />
+                </div>
+                <div>
+                  <Input
+                    {...register("email")}
+                    type="email"
+                    placeholder="邮箱（选填）"
+                    className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
                 <Button
                   type="submit"

@@ -6,9 +6,11 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site.config"
 import { trackCTA } from "@/lib/utils"
+import { LeadForm } from "@/components/common/lead-form"
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [leadFormOpen, setLeadFormOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
@@ -40,7 +42,10 @@ export function Navbar() {
             <Button
               variant="brand"
               size="lg"
-              onClick={() => trackCTA("click", "navbar-cta")}
+              onClick={() => {
+                trackCTA("click", "navbar-cta")
+                setLeadFormOpen(true)
+              }}
               className="track-heat"
             >
               免费试用
@@ -81,6 +86,7 @@ export function Navbar() {
                 onClick={() => {
                   trackCTA("click", "navbar-cta-mobile")
                   setMobileMenuOpen(false)
+                  setLeadFormOpen(true)
                 }}
               >
                 免费试用
@@ -89,6 +95,7 @@ export function Navbar() {
           </div>
         )}
       </div>
+      <LeadForm open={leadFormOpen} onOpenChange={setLeadFormOpen} />
     </nav>
   )
 }

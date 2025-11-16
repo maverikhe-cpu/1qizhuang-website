@@ -62,3 +62,49 @@ export async function submitForm(formData: {
   })
 }
 
+// 留资表单提交（发送邮件）
+export async function submitLeadForm(formData: {
+  name: string
+  phone: string
+  company?: string
+  email?: string
+  message?: string
+  source?: string
+  timestamp?: string
+}): Promise<ApiResponse<{ success: boolean }>> {
+  try {
+    // 调用 API 路由发送邮件
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...formData,
+        to: 'mingjie.he@timontech.cn',
+        subject: `【一起装】免费试用申请 - ${formData.name}`,
+      }),
+    })
+
+    if (!response.ok) {
+      throw new Error('Failed to send email')
+    }
+
+    const data = await response.json()
+    
+    // 触发转化追踪
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        event_category: 'Lead',
+        event_label: '免费试用',
+      })
+    }
+
+    return { success: true, data }
+  } catch (error) {
+    console.error('Lead form submission error:', error)
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error',
+    }
+  }
+}
+
