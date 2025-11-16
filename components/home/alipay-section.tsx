@@ -23,7 +23,7 @@ export function AlipaySection() {
             核心合作伙伴
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            我们是支付宝'可信装修'解决方案在AI端口的核心合作伙伴
+            我们是支付宝&apos;可信装修&apos;解决方案在AI端口的核心合作伙伴
           </p>
         </motion.div>
 

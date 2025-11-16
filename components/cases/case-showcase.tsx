@@ -68,7 +68,7 @@ export function CaseShowcase() {
                         {caseItem.region}
                       </span>
                     </div>
-                    <p className="text-gray-600 mb-6 italic">"{caseItem.testimonial}"</p>
+                    <p className="text-gray-600 mb-6 italic">&ldquo;{caseItem.testimonial}&rdquo;</p>
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(caseItem.before).map(([key, value]) => {
                         const afterValue = caseItem.after[key as keyof typeof caseItem.after]

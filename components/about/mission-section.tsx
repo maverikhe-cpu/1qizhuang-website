@@ -22,7 +22,7 @@ export function MissionSection() {
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
             我们致力于用AI技术赋能传统装修行业，让每一个装企都能享受到智能化带来的效率提升和成本降低。
-            通过技术创新，我们帮助装企实现从"看不见、管不了、不管了"到"好管理、好口碑、好生意"的转变。
+            通过技术创新，我们帮助装企实现从&ldquo;看不见、管不了、不管了&rdquo;到&ldquo;好管理、好口碑、好生意&rdquo;的转变。
           </p>
         </motion.div>
       </div>

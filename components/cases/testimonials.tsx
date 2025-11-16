@@ -6,7 +6,7 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   "我们交付的不是冰冷的监控硬件，而是一位助您省心管理工地、轻松触达客户、提高转化率的智能助手",
-  "选择我们抢先接入未来家装的主流生态，在支付宝上树立您'透明、可信、科技'的专业形象",
+  "选择我们抢先接入未来家装的主流生态，在支付宝上树立您&apos;透明、可信、科技&apos;的专业形象",
   "一起装让好交付自动带来新客户，实现口碑的持续增长",
 ]
 
@@ -39,7 +39,7 @@ export function Testimonials() {
                 <CardContent className="p-8">
                   <Quote className="h-12 w-12 text-brand-blue mb-4 opacity-20" />
                   <p className="text-lg text-gray-700 italic leading-relaxed">
-                    "{testimonial}"
+                    &ldquo;{testimonial}&rdquo;
                   </p>
                 </CardContent>
               </Card>

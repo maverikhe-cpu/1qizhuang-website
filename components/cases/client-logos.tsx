@@ -24,7 +24,7 @@ export function ClientLogos() {
             客户Logo墙
           </h2>
           <p className="text-gray-600">
-            服务装企500+，排列成"一起装"文字形状
+            服务装企500+，排列成&ldquo;一起装&rdquo;文字形状
           </p>
         </motion.div>
 

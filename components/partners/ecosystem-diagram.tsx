@@ -30,7 +30,7 @@ export function EcosystemDiagram() {
             </h2>
           </div>
           <p className="text-gray-600">
-            "一起装"如何连接各层生态
+            &ldquo;一起装&rdquo;如何连接各层生态
           </p>
         </motion.div>
 

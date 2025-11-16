@@ -121,16 +121,55 @@ GA_MEASUREMENT_ID=your-google-analytics-id
 
 ## 部署
 
-### Vercel部署
+### 方式一：使用 Vercel CLI（快速部署）
 
-1. 将代码推送到GitHub
-2. 在Vercel中导入项目
-3. 配置环境变量
-4. 部署
+1. **登录 Vercel**（首次使用需要）：
+   ```bash
+   npx vercel login
+   ```
+   这会打开浏览器让你登录 Vercel 账户
+
+2. **部署到预览环境**：
+   ```bash
+   npx vercel
+   ```
+   按照提示操作，首次部署会询问项目配置
+
+3. **部署到生产环境**：
+   ```bash
+   npx vercel --prod
+   ```
+
+### 方式二：通过 GitHub 集成（推荐用于持续部署）
+
+1. **创建 GitHub 仓库并推送代码**：
+   ```bash
+   git remote add origin https://github.com/你的用户名/yiqizhuang-website.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+2. **在 Vercel 中导入项目**：
+   - 访问 https://vercel.com/new
+   - 点击 "Import Git Repository"
+   - 选择你的 GitHub 仓库
+   - Vercel 会自动检测 Next.js 配置
+
+3. **自动部署**：
+   - 点击 "Deploy" 后，Vercel 会自动构建和部署
+   - 之后每次推送到 main 分支都会自动部署
+
+### 配置环境变量
+
+在 Vercel 项目设置中添加环境变量：
+- `GA_MEASUREMENT_ID` - Google Analytics ID（可选）
+- `NEXT_PUBLIC_API_URL` - API 地址（如需要）
 
 ### 自定义域名
 
-在Vercel项目设置中配置自定义域名。
+在 Vercel 项目设置 > Domains 中添加自定义域名，按照提示配置 DNS。
+
+详细部署说明请查看 [DEPLOY.md](./DEPLOY.md)
 
 ## SEO配置
 
