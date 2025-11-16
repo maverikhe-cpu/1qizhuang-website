@@ -26,12 +26,25 @@ git push -u origin main
 4. 点击 **"Import"** 按钮
 5. Zeabur 会自动检测 Next.js 项目并开始部署
 
-### 4. 配置环境变量（如需要）
+### 4. 配置环境变量（必需）
 
 在 Zeabur 项目设置中添加环境变量：
+
+**必需的环境变量：**
+- `RESEND_API_KEY` = `re_WCLSfdXu_5r1SKoAWE7LW9tpeiZfAGBCJ` - Resend API Key（邮件发送）
+- `RESEND_FROM_EMAIL` = `onboarding@resend.dev` - Resend 发件人邮箱
+
+**可选的环境变量：**
 - `GA_MEASUREMENT_ID` - Google Analytics ID（可选）
 - `NEXT_PUBLIC_API_URL` - API 地址（如需要）
 - `NODE_ENV=production`
+
+**配置步骤：**
+1. 在项目详情页左侧菜单找到 **"Environment Variables"**
+2. 点击 **"Add Variable"** 添加环境变量
+3. 保存后 Zeabur 会自动重新部署
+
+**详细说明请参考：** `ZEABUR_ENV_SETUP.md`
 
 ### 5. 配置自定义域名（可选）
 
