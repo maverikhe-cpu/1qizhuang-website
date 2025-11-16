@@ -33,6 +33,12 @@ ${message ? `留言：${message}` : ''}
 
     if (RESEND_API_KEY) {
       // 使用 Resend 发送邮件
+      console.log('Attempting to send email via Resend...', {
+        from: RESEND_FROM_EMAIL,
+        to,
+        hasApiKey: !!RESEND_API_KEY,
+      })
+
       const resendResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -92,29 +98,42 @@ ${message ? `留言：${message}` : ''}
         }),
       })
 
+      const responseText = await resendResponse.text()
+      console.log('Resend API response status:', resendResponse.status)
+      console.log('Resend API response:', responseText)
+
       if (!resendResponse.ok) {
-        const errorData = await resendResponse.json()
+        let errorData
+        try {
+          errorData = JSON.parse(responseText)
+        } catch {
+          errorData = { message: responseText }
+        }
+        console.error('Resend API error:', errorData)
         throw new Error(`Resend API error: ${JSON.stringify(errorData)}`)
       }
 
-      const resendData = await resendResponse.json()
+      const resendData = JSON.parse(responseText)
+      console.log('Email sent successfully:', resendData.id)
       return NextResponse.json({ success: true, id: resendData.id })
     } else {
-      // 如果没有配置 Resend，使用 nodemailer 或其他方式
-      // 这里先返回成功，实际生产环境需要配置邮件服务
+      // 如果没有配置 Resend API Key
+      console.error('RESEND_API_KEY not configured')
       console.log('Email would be sent:', {
         to,
         subject: subject || `【一起装】免费试用申请 - ${name}`,
         content: emailContent,
       })
 
-      // 开发环境：直接返回成功
-      // 生产环境：需要配置邮件服务（Resend、SendGrid、SMTP等）
-      return NextResponse.json({ 
-        success: true, 
-        message: 'Email sent (development mode)',
-        // 在实际生产环境中，这里应该调用真实的邮件服务
-      })
+      // 返回错误，提示需要配置
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'RESEND_API_KEY not configured. Please set RESEND_API_KEY environment variable.',
+          message: '邮件服务未配置，请联系管理员',
+        },
+        { status: 500 }
+      )
     }
   } catch (error) {
     console.error('Send email error:', error)

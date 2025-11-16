@@ -85,10 +85,17 @@ export async function submitLeadForm(formData: {
     })
 
     if (!response.ok) {
-      throw new Error('Failed to send email')
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
+      console.error('Email API error:', errorData)
+      throw new Error(errorData.error || errorData.message || 'Failed to send email')
     }
 
     const data = await response.json()
+    
+    // 检查返回的数据是否表示成功
+    if (!data.success && data.error) {
+      throw new Error(data.error)
+    }
     
     // 触发转化追踪
     if (typeof window !== 'undefined' && (window as any).gtag) {

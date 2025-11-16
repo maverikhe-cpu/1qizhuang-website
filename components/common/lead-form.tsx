@@ -54,11 +54,14 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
           onOpenChange(false)
         }, 3000)
       } else {
-        alert("提交失败，请稍后重试")
+        const errorMessage = result.error || "提交失败，请稍后重试"
+        console.error("Form submission failed:", errorMessage)
+        alert(`提交失败：${errorMessage}`)
       }
     } catch (error) {
       console.error("Form submission error:", error)
-      alert("提交失败，请稍后重试")
+      const errorMessage = error instanceof Error ? error.message : "提交失败，请稍后重试"
+      alert(`提交失败：${errorMessage}`)
     }
   }
 
