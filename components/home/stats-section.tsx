@@ -47,7 +47,7 @@ function AnimatedNumber({ value, suffix }: { value: string; suffix: string }) {
   }, [isInView, value])
 
   return (
-    <div ref={ref} className="font-mono text-5xl md:text-6xl font-bold">
+    <div ref={ref} className="font-mono text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
       {displayValue}
       <span className="text-brand-orange">{suffix}</span>
     </div>
@@ -56,7 +56,7 @@ function AnimatedNumber({ value, suffix }: { value: string; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export function StatsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             数据亮点
           </h2>
         </motion.div>
@@ -81,7 +81,7 @@ export function StatsSection() {
               className="text-center"
             >
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-              <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">
+              <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm md:text-base font-medium">
                 {stat.label}
               </p>
             </motion.div>

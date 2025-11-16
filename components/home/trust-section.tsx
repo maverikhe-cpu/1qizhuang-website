@@ -14,7 +14,7 @@ const partners = [
 
 export function TrustSection() {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
@@ -23,7 +23,7 @@ export function TrustSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <p className="text-gray-600 text-sm uppercase tracking-wider mb-4">
+          <p className="text-gray-600 dark:text-gray-400 text-sm uppercase tracking-wider mb-4">
             合作伙伴
           </p>
         </motion.div>

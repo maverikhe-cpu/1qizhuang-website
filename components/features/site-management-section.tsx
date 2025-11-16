@@ -70,7 +70,7 @@ const additionalFeatures = [
 
 export function SiteManagementSection() {
   return (
-    <section id="section-site" className="py-20 bg-white scroll-mt-20">
+    <section id="section-site" className="py-20 bg-white dark:bg-gray-900 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,10 +79,10 @@ export function SiteManagementSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             工地管理
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             通过AI视觉技术，实现工地管理的数字化、智能化，让&ldquo;看不见、管不了、不管了&rdquo;成为历史
           </p>
         </motion.div>
@@ -113,8 +113,8 @@ export function SiteManagementSection() {
                         <Icon className="h-6 w-6 text-brand-blue" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl">{feature.title}</CardTitle>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <CardTitle className="text-xl text-gray-900 dark:text-white">{feature.title}</CardTitle>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
                           {feature.subtitle}
                         </p>
                       </div>
@@ -123,7 +123,7 @@ export function SiteManagementSection() {
                   <CardContent>
                     <ul className="space-y-2">
                       {feature.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
                           <span className="text-brand-blue mt-1">•</span>
                           <span>{highlight}</span>
                         </li>
@@ -144,7 +144,7 @@ export function SiteManagementSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">更多智能功能</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">更多智能功能</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {additionalFeatures.map((feature, index) => (
               <motion.div
@@ -156,8 +156,8 @@ export function SiteManagementSection() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow border-l-4 border-l-brand-blue">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h4>
-                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{feature.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{feature.description}</p>
                     <div className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold">
                       {feature.benefit}
                     </div>

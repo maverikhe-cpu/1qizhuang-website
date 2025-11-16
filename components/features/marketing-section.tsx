@@ -70,7 +70,7 @@ const caseStudies = [
 
 export function MarketingSection() {
   return (
-    <section id="section-marketing" className="py-20 bg-white scroll-mt-20">
+    <section id="section-marketing" className="py-20 bg-white dark:bg-gray-900 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,10 +79,10 @@ export function MarketingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             营销获客
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             让好交付自动带来新客户，通过透明化展示工地进度，提升客户信任度，降低获客成本
           </p>
         </motion.div>
@@ -107,8 +107,8 @@ export function MarketingSection() {
                       <div className="inline-flex p-4 bg-brand-orange/10 rounded-full mb-4">
                         <Icon className="h-8 w-8 text-brand-orange" />
                       </div>
-                      <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
-                      <p className="text-gray-600 mb-2">{step.description}</p>
+                      <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-2">{step.description}</p>
                       <p className="text-sm text-brand-blue font-medium">{step.tool}</p>
                     </CardContent>
                   </Card>
@@ -134,12 +134,12 @@ export function MarketingSection() {
           <Card>
             <CardContent className="p-8">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">围观装修小程序</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">围观装修小程序</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   意向客户可实时看工地，提升信任度，降低获客成本60%
                 </p>
               </div>
-              <div className="relative aspect-[9/16] max-w-xs mx-auto bg-gray-100 rounded-lg overflow-hidden">
+              <div className="relative aspect-[9/16] max-w-xs mx-auto bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400"
                   alt="小程序界面"
@@ -159,7 +159,7 @@ export function MarketingSection() {
           transition={{ duration: 0.6 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">营销工具矩阵</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">营销工具矩阵</h3>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {marketingTools.map((tool, index) => (
               <motion.div
@@ -171,8 +171,8 @@ export function MarketingSection() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow border-t-4 border-t-brand-orange">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{tool.title}</h4>
-                    <p className="text-gray-600 mb-4">{tool.description}</p>
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{tool.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{tool.description}</p>
                     <div className="inline-block px-3 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold">
                       {tool.benefit}
                     </div>
@@ -191,7 +191,7 @@ export function MarketingSection() {
           transition={{ duration: 0.6 }}
           className="bg-gradient-to-r from-brand-orange/10 to-brand-blue/10 rounded-2xl p-8 md:p-12"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">客户成功案例</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">客户成功案例</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {caseStudies.map((study, index) => (
               <motion.div
@@ -201,11 +201,11 @@ export function MarketingSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Card className="h-full bg-white">
+                <Card className="h-full bg-white dark:bg-gray-800">
                   <CardContent className="p-6">
                     <div className="text-3xl font-bold text-brand-blue mb-2">{study.metric}</div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{study.company}</h4>
-                    <p className="text-sm text-gray-600">{study.result}</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">{study.company}</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{study.result}</p>
                   </CardContent>
                 </Card>
               </motion.div>

@@ -27,7 +27,7 @@ const painPoints = [
 
 export function PainPointsSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,10 +36,10 @@ export function PainPointsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             三大痛点
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             传统装修管理面临的挑战
           </p>
         </motion.div>
@@ -57,13 +57,13 @@ export function PainPointsSection() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6 text-center">
-                    <div className={`inline-flex p-4 rounded-full bg-gray-100 mb-4 ${point.color}`}>
+                    <div className={`inline-flex p-4 rounded-full bg-gray-100 dark:bg-gray-800 mb-4 ${point.color}`}>
                       <Icon className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                       {point.title}
                     </h3>
-                    <p className="text-gray-600">{point.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300">{point.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

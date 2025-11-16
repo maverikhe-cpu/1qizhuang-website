@@ -5,6 +5,7 @@ import "./globals.css"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { SmartChat } from "@/components/common/smart-chat"
+import { ThemeProvider } from "@/components/theme/theme-provider"
 import { siteConfig } from "@/config/site.config"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -42,25 +43,27 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
       <head />
       <body className={inter.className}>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
-          `}
-        </Script>
-        <Navbar />
-        <main className="pt-16">{children}</main>
-        <Footer />
-        <SmartChat />
+        <ThemeProvider defaultTheme="system" storageKey="yiqizhuang-theme">
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID');
+            `}
+          </Script>
+          <Navbar />
+          <main className="pt-16">{children}</main>
+          <Footer />
+          <SmartChat />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -71,24 +71,24 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
         {submitted ? (
           <div className="text-center py-8">
             <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">提交成功！</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">提交成功！</h3>
+            <p className="text-gray-600 dark:text-gray-300">
               我们会尽快与您联系
             </p>
           </div>
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-center">
+              <DialogTitle className="text-2xl font-bold text-center text-gray-900 dark:text-white">
                 免费试用申请
               </DialogTitle>
-              <DialogDescription className="text-center">
+              <DialogDescription className="text-center text-gray-600 dark:text-gray-300">
                 填写表单，我们的团队会在24小时内与您联系
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
                   姓名 <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -102,7 +102,7 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
                   手机号 <span className="text-red-500">*</span>
                 </label>
                 <Input
@@ -117,7 +117,7 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
                   公司名称
                 </label>
                 <Input
@@ -127,7 +127,7 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
                   邮箱
                 </label>
                 <Input
@@ -142,7 +142,7 @@ export function LeadForm({ open, onOpenChange }: LeadFormProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
                   留言
                 </label>
                 <textarea

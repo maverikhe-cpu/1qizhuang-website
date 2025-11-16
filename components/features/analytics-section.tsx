@@ -75,7 +75,7 @@ const analyticsFeatures = [
 
 export function AnalyticsSection() {
   return (
-    <section id="section-analytics" className="py-20 bg-gray-50 scroll-mt-20">
+    <section id="section-analytics" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -84,10 +84,10 @@ export function AnalyticsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             数据分析
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             让管理从凭经验、靠感觉走向看数据、做决策，通过数据驱动提升管理效率和决策质量
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ export function AnalyticsSection() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm mb-1">{metric.label}</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-1">{metric.label}</p>
                         <p className={`text-2xl font-bold ${metric.color}`}>
                           {metric.value}
                         </p>
@@ -133,7 +133,7 @@ export function AnalyticsSection() {
             <CardContent className="p-8">
               <div className="flex items-center gap-2 mb-6">
                 <BarChart3 className="h-6 w-6 text-brand-blue" />
-                <h3 className="text-2xl font-bold">数据大屏预览</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">数据大屏预览</h3>
               </div>
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
@@ -160,7 +160,7 @@ export function AnalyticsSection() {
           transition={{ duration: 0.6 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">多维度数据分析</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">多维度数据分析</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dataDimensions.map((dimension, index) => (
               <motion.div
@@ -173,10 +173,10 @@ export function AnalyticsSection() {
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-4">{dimension.icon}</div>
-                    <h4 className="text-lg font-semibold mb-3 text-gray-900">{dimension.title}</h4>
+                    <h4 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">{dimension.title}</h4>
                     <ul className="space-y-2">
                       {dimension.metrics.map((metric, i) => (
-                        <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
+                        <li key={i} className="text-sm text-gray-600 dark:text-gray-300 flex items-center gap-2">
                           <span className="text-brand-blue">•</span>
                           {metric}
                         </li>
@@ -197,7 +197,7 @@ export function AnalyticsSection() {
           transition={{ duration: 0.6 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">核心功能</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">核心功能</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {analyticsFeatures.map((feature, index) => (
               <motion.div
@@ -209,8 +209,8 @@ export function AnalyticsSection() {
               >
                 <Card className="h-full hover:shadow-lg transition-shadow border-l-4 border-l-brand-blue">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h4>
-                    <p className="text-gray-600 mb-4">{feature.description}</p>
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{feature.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{feature.description}</p>
                     <div className="inline-block px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-semibold">
                       {feature.benefit}
                     </div>

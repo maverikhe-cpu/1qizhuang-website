@@ -64,7 +64,7 @@ const scheduleBenefits = [
 
 export function ScheduleManagementSection() {
   return (
-    <section id="section-schedule" className="py-20 bg-gray-50 scroll-mt-20">
+    <section id="section-schedule" className="py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,10 +73,10 @@ export function ScheduleManagementSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             工期管理
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             验收从工期堵点变为营销亮点，让客户实时了解进度，提升信任度和满意度
           </p>
         </motion.div>
@@ -103,8 +103,8 @@ export function ScheduleManagementSection() {
                       <div className="inline-flex p-4 bg-brand-blue/10 rounded-full mb-4">
                         <Icon className="h-8 w-8 text-brand-blue" />
                       </div>
-                      <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                      <p className="text-sm text-gray-600">{step.description}</p>
+                      <h3 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{step.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -120,9 +120,9 @@ export function ScheduleManagementSection() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b">
-                      <th className="text-left p-4 font-semibold">对比维度</th>
-                      <th className="text-left p-4 font-semibold text-red-600">传统方式</th>
+                    <tr className="border-b dark:border-gray-700">
+                      <th className="text-left p-4 font-semibold text-gray-900 dark:text-white">对比维度</th>
+                      <th className="text-left p-4 font-semibold text-red-600 dark:text-red-400">传统方式</th>
                       <th className="text-left p-4 font-semibold text-brand-blue">一起装AI</th>
                       <th className="text-left p-4 font-semibold text-brand-orange">效果提升</th>
                     </tr>
@@ -135,11 +135,11 @@ export function ScheduleManagementSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="border-b hover:bg-gray-50 transition-colors"
+                        className="border-b hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       >
-                        <td className="p-4 font-medium">{item.aspect}</td>
-                        <td className="p-4 text-gray-600">{item.traditional}</td>
-                        <td className="p-4 text-gray-900">{item.ai}</td>
+                        <td className="p-4 font-medium text-gray-900 dark:text-white">{item.aspect}</td>
+                        <td className="p-4 text-gray-600 dark:text-gray-300">{item.traditional}</td>
+                        <td className="p-4 text-gray-900 dark:text-white">{item.ai}</td>
                         <td className="p-4 font-semibold text-brand-orange">
                           {item.benefit}
                         </td>
@@ -160,7 +160,7 @@ export function ScheduleManagementSection() {
           transition={{ duration: 0.6 }}
           className="mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">智能工期管理优势</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">智能工期管理优势</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {scheduleBenefits.map((benefit, index) => (
               <motion.div
@@ -173,8 +173,8 @@ export function ScheduleManagementSection() {
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardContent className="p-6 text-center">
                     <div className="text-5xl mb-4">{benefit.icon}</div>
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">{benefit.title}</h4>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{benefit.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>

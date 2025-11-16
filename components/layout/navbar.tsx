@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { siteConfig } from "@/config/site.config"
 import { trackCTA } from "@/lib/utils"
 import { LeadForm } from "@/components/common/lead-form"
@@ -13,7 +14,7 @@ export function Navbar() {
   const [leadFormOpen, setLeadFormOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -21,7 +22,7 @@ export function Navbar() {
             <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">一</span>
             </div>
-            <span className="font-bold text-xl text-gray-900">一起装</span>
+            <span className="font-bold text-xl text-gray-900 dark:text-white">一起装</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -30,15 +31,16 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-800 hover:text-brand-blue transition-colors font-medium"
+                className="text-gray-800 dark:text-gray-200 hover:text-brand-blue dark:hover:text-brand-blue transition-colors font-medium"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Theme Toggle & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button
               variant="brand"
               size="lg"
@@ -68,29 +70,32 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-4">
               {siteConfig.navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-gray-700 hover:text-brand-blue transition-colors"
+                  className="text-gray-700 dark:text-gray-200 hover:text-brand-blue transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Button
-                variant="brand"
-                className="w-full mt-4"
-                onClick={() => {
-                  trackCTA("click", "navbar-cta-mobile")
-                  setMobileMenuOpen(false)
-                  setLeadFormOpen(true)
-                }}
-              >
-                免费试用
-              </Button>
+              <div className="flex items-center justify-between mt-4">
+                <ThemeToggle />
+                <Button
+                  variant="brand"
+                  className="flex-1 ml-4"
+                  onClick={() => {
+                    trackCTA("click", "navbar-cta-mobile")
+                    setMobileMenuOpen(false)
+                    setLeadFormOpen(true)
+                  }}
+                >
+                  免费试用
+                </Button>
+              </div>
             </div>
           </div>
         )}

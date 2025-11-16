@@ -37,7 +37,7 @@ export function SmartChat() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-24 right-6 w-80 h-96 bg-white rounded-lg shadow-2xl z-50 flex flex-col"
+            className="fixed bottom-24 right-6 w-80 h-96 bg-white dark:bg-gray-800 rounded-lg shadow-2xl z-50 flex flex-col"
           >
             {/* Header */}
             <div className="bg-brand-blue text-white p-4 rounded-t-lg">
@@ -51,8 +51,8 @@ export function SmartChat() {
                 <div className="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center text-white text-sm">
                   客
                 </div>
-                <div className="flex-1 bg-gray-100 rounded-lg p-3">
-                  <p className="text-sm text-gray-700">
+                <div className="flex-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-3">
+                  <p className="text-sm text-gray-700 dark:text-gray-200">
                     您好！有什么可以帮助您的吗？
                   </p>
                 </div>
@@ -60,7 +60,7 @@ export function SmartChat() {
             </div>
 
             {/* Input */}
-            <div className="border-t p-4 flex gap-2">
+            <div className="border-t border-gray-200 dark:border-gray-700 p-4 flex gap-2">
               <Input
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
