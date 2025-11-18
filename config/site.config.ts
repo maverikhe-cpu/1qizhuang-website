@@ -26,7 +26,7 @@ export const siteConfig = {
   // 联系方式
   contact: {
     phone: "400-888-8888",
-    email: "contact@yiqizhuang.com",
+    email: "info@timontech.cn",
     address: "北京市朝阳区xxx",
   },
   
