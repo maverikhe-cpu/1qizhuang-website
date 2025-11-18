@@ -71,7 +71,7 @@ curl -X POST http://localhost:3000/api/send-email \
   -d '{
     "name": "测试",
     "phone": "13800138000",
-    "to": "mingjie.he@timontech.cn",
+    "to": "info@timontech.cn",
     "subject": "测试邮件"
   }'
 ```

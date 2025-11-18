@@ -17,7 +17,7 @@ async function testEmail() {
 
   // Resend 测试模式：使用 onboarding@resend.dev 时，只能发送到注册邮箱
   const isTestMode = RESEND_FROM_EMAIL === 'onboarding@resend.dev'
-  const actualRecipient = 'mingjie.he@timontech.cn'
+  const actualRecipient = 'info@timontech.cn'
   const sendTo = isTestMode ? 'maverik.he@gmail.com' : actualRecipient
 
   if (isTestMode) {

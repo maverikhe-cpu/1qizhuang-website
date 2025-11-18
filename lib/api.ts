@@ -79,7 +79,7 @@ export async function submitLeadForm(formData: {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         ...formData,
-        to: 'mingjie.he@timontech.cn',
+        to: 'info@timontech.cn',
         subject: `【一起装】免费试用申请 - ${formData.name}`,
       }),
     })

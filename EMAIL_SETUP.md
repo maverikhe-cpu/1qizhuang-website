@@ -2,7 +2,7 @@
 
 ## 功能说明
 
-当用户点击"免费试用"按钮时，会弹出留资表单。提交后，表单信息会自动发送到 `mingjie.he@timontech.cn`。
+当用户点击"免费试用"按钮时，会弹出留资表单。提交后，表单信息会自动发送到 `info@timontech.cn`。
 
 ## 配置方式
 
@@ -95,7 +95,7 @@ await transporter.sendMail({
 
 3. 点击"免费试用"按钮，填写表单并提交
 
-4. 检查邮箱 `mingjie.he@timontech.cn` 是否收到邮件
+4. 检查邮箱 `info@timontech.cn` 是否收到邮件
 
 ### 生产环境测试
 
@@ -119,7 +119,7 @@ await transporter.sendMail({
 1. 检查环境变量是否正确配置
 2. 检查 Resend Dashboard 中的发送日志
 3. 检查垃圾邮件文件夹
-4. 确认收件人邮箱地址正确：`mingjie.he@timontech.cn`
+4. 确认收件人邮箱地址正确：`info@timontech.cn`
 
 ### API 错误
 

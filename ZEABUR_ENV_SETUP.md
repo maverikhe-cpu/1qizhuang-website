@@ -62,7 +62,7 @@ Zeabur 部署环境中缺少 `RESEND_API_KEY` 环境变量，导致邮件发送�
 
 1. 用户提交表单
 2. 邮件发送到：`maverik.he@gmail.com`（注册邮箱）
-3. 邮件中包含实际收件人：`mingjie.he@timontech.cn`
+3. 邮件中包含实际收件人：`info@timontech.cn`
 4. 可以手动转发或设置自动转发
 
 ## 常见问题
@@ -96,7 +96,7 @@ A: 检查以下几点：
 
 2. **设置自动转发**：
    - 在 Gmail（maverik.he@gmail.com）设置自动转发
-   - 转发到：mingjie.he@timontech.cn
+   - 转发到：info@timontech.cn
 
 ## 联系支持
 
